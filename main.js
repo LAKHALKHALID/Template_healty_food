@@ -26,3 +26,33 @@ croos.addEventListener("click",(e)=>{
 })
 
 // End header
+
+// Start setting-box 
+let settingBox = document.querySelector(".settings-box");
+let iconBox=document.querySelector(".settings-box .icon") ;
+ iconBox.addEventListener("click",()=>{
+  settingBox.classList.toggle("open")
+ })
+console.log( iconBox)
+// End setting-box
+
+// Start section color
+let listColor=document.querySelectorAll(".settings-box ul li")
+let acitvClass=document.querySelectorAll(".active")
+// console.log(acitvClass)
+
+if (window.localStorage.getItem("color")){
+  // console.log("yes" ,window.localStorage.getItem("color"))
+  // acitvClass.style.color=window.localStorage.getItem("color")
+  document.documentElement.style.setProperty("--main-color",window.localStorage.getItem("color"))
+}
+
+listColor.forEach ((el) => {
+  el.addEventListener("click",(e)=>{
+    console.log(e.currentTarget.dataset.color)
+    window.localStorage.setItem("color",e.currentTarget.dataset.color)
+    document.documentElement.style.setProperty('--main-color',e.currentTarget.dataset.color)
+
+  })
+})
+// End section color

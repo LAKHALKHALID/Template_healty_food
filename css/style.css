@@ -51,12 +51,65 @@
 /* Start setting-box */
 .settings-box{
   background-color: #fff;
-  width: 200px;
-  height: 200px ;
-  position: absolute;
-  left: 0;
+  width: 33px;
+  height: 142px ;
+  position: fixed;
+  left: -33px;
   top: 100px; 
   z-index: 20000;
+  transition: var(--main-transition);
+}
+.settings-box .icon{
+  position: absolute;
+  width: 20px ;
+  height: 30px ;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+}
+.settings-box .icon i{
+font-size: 20px;
+}
+.settings-box ul {
+list-style: none;
+display: flex;
+flex-direction: column;
+width: fit-content;
+position: absolute;
+left: 5px;
+top: 9%;
+gap: 5px;
+/* transform:translate(-50%,-50%); */
+}
+.settings-box ul li{
+  width: 20px;
+  height: 20px ;
+  /* background-color: red; */
+  border-radius: 50%;
+  
+}
+.settings-box ul li:nth-child(1){
+background-color:red ;
+}
+.settings-box ul li:nth-child(2) {
+  background-color: green;
+}
+.settings-box ul li:nth-child(3) {
+  background-color: orange;
+}
+.settings-box ul li:nth-child(4) {
+  background-color: yellow;
+}
+.settings-box ul li:nth-child(5) {
+  background-color: blue;
+}
+.open{
+  left: 0px;
 }
 /* End setting-box */
 /* Start header */
@@ -192,3 +245,124 @@ text-decoration: none;
   color: var(--main-color);
 }
 /* End landing */
+
+/* Start kind food  */
+.kind-food {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: var(--main-background);
+  z-index: -2;
+}
+
+.main-title {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  padding: 15px 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 2;
+  transition: var(--main-transition);
+}
+
+.main-title:hover {
+  color: #FFF;
+  border-color: #FFF;
+}
+
+.main-title::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+
+.main-title:hover::before {
+  width: 100%;
+}
+
+.main-para {
+  text-align: center;
+  margin: 20px 0 50px;
+}
+
+.kind-food .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20PX;
+  background-color: #fff;
+  padding: 20px 10px;
+}
+
+.kind-food .container .shop {
+  flex-basis: 45%;
+  /* background: orange; */
+  /* height: 350.58px; */
+  width: 80%;
+}
+
+.kind-food .container .shop img {
+  max-width: 100%;
+}
+
+.kind-food .container .type {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 45%;
+}
+
+.kind-food .container .type .food {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  padding: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.kind-food .container .type .food::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: rgb(233 233 233 / 13%);
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: var(--main-transition);
+
+}
+
+.kind-food .container .type .food:hover::before {
+  height: 100%;
+  width: 100%;
+}
+
+.kind-food .container .type .food img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.kind-food .container .type .food .info {}
+
+.kind-food .container .type .info h3 {
+  margin-bottom: 5px;
+}
+
+.kind-food .container .type .info p {
+  color: gray;
+  font-size: 15px;
+  line-height: 1.5;
+
+}
+
+/* End kind food */
