@@ -241,6 +241,19 @@ text-decoration: none;
 .landing .content p {
   line-height: 1.7;
 }
+@media (max-width:992px) {
+  .landing .content h2 {
+    font-size: 20px;
+
+  }
+    .landing .content p{
+      font-size: 14px;
+      line-height: normal;
+    }
+        .landing .content{
+          width: 80%;
+        }
+}
 .active{
   color: var(--main-color);
 }
@@ -258,38 +271,46 @@ text-decoration: none;
   position: relative;
   width: fit-content;
   margin: auto;
-  padding: 15px 20px;
+  color: var(--main-color);
+  /* padding: 15px 20px;
   border: 2px solid black;
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 20px; */
+  /* overflow: hidden; */
   z-index: 2;
+  padding-bottom: 10px;
   transition: var(--main-transition);
 }
 
-.main-title:hover {
-  color: #FFF;
-  border-color: #FFF;
-}
+
 
 .main-title::before {
-  content: "";
+content: "";
   position: absolute;
-  width: 0%;
-  height: 100%;
+  width: 110%;
+  height: 2px;
   z-index: -1;
-  top: 0;
-  left: 0;
-  background-color: var(--main-color);
+  bottom: -10px;
+  left: -5%;
+  background-color: #323131;
   transition: var(--main-transition);
 }
-
-.main-title:hover::before {
-  width: 100%;
+.main-title::after{
+  position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 2px solid #323131;
+    left: 52%;
+    bottom: -17px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #fff;
 }
+
 
 .main-para {
   text-align: center;
-  margin: 20px 0 50px;
+  margin: 40px 0 50px;
 }
 
 .kind-food .container {
@@ -299,6 +320,11 @@ text-decoration: none;
   gap: 20PX;
   background-color: #fff;
   padding: 20px 10px;
+}
+@media (max-width:992px){
+  .kind-food .container{
+    flex-direction: column;
+  }
 }
 
 .kind-food .container .shop {
@@ -366,3 +392,46 @@ text-decoration: none;
 }
 
 /* End kind food */
+
+/* Start healty food  */
+.healty-food{
+
+}
+.healty-food .container{
+display: grid;
+grid-template-columns: repeat(auto-fill,minmax(300px , 1fr));
+gap: 40px;
+}
+.healty-food .container .box{
+  /* width: 40%; */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0px -3px 5px rgba(0, 0, 0, 0.5);
+
+}
+.healty-food .container .box .image{
+
+}
+.healty-food .container .box img{
+  max-width: 100%;
+}
+.healty-food .container .box h3{
+    font-size: 18px;
+  padding: 10px 20px 10px 5px;
+}
+.healty-food .container .box p{
+font-size: 15px;
+  line-height: 1.6;
+  padding: 0 20px 20px 5px;
+}
+.healty-food .container .box .link{
+      padding-bottom: 21px;
+        padding-left: 5px;
+      
+}
+.healty-food .container .box a{
+    text-decoration: none;
+      color: var(--main-color);
+      border: 2px solid var(--main-color);
+      padding: 8px 15px;
+      border-radius: 20px;
+}
+/* End healty food */
